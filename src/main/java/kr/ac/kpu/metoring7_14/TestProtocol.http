@@ -1,0 +1,30 @@
+GET http://localhost:8080/hello
+Accept: text/html
+
+###
+
+PUT http://localhost:80/api/item?id=99
+Accept: application/json
+
+###
+
+
+POST http://localhost:8080/api/post
+Content-Type: application/json
+
+{
+  "id": "jimiNewTron",
+  "pw": "UsokUsok",
+  "email": "subin@naver.com"
+}
+
+
+
+###
+GET http://localhost:8080/api/get/1/?name="JIMI"
+Accept: application/json
+
+###
+GET https://www.naver.com/
+Accept: application/json
+
