@@ -29,13 +29,15 @@ class RestApiControllerTest {
         String email = "subin@naver.com";
         //given
         User user = User.builder().id(id).pw(pw).email(email).build();
+
+        //when
         final ResultActions actions =
                 mvc.perform(MockMvcRequestBuilders.post("/api/post")
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON)
                         .characterEncoding("UTF-8")
                         .content(objectMapper.writeValueAsString(user)));
-        //when
+        //then
         actions.andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(id))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.pw").value(pw))

@@ -9,5 +9,6 @@ public class PageController {
     @RequestMapping("/hello")
     public String hello(){
         return "Hello.html";
+
     }
 }
